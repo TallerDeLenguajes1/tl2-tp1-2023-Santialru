@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Empresa;
+// using Empresa;
 class Program
 {
     static void Main(string[] args)
@@ -167,42 +167,42 @@ class Program
     }
 }
 
-class Pedido
-{
-    public int Nro { get; set; }
-    public string Obs { get; set; }
-    public Cliente Cliente { get; set; }
-    public string Estado { get; set; }
-    public Cadete CadeteAsignado { get; set; }
-}
+// class Pedido
+// {
+//     public int Nro { get; set; }
+//     public string Obs { get; set; }
+//     public Cliente Cliente { get; set; }
+//     public string Estado { get; set; }
+//     public Cadete CadeteAsignado { get; set; }
+// }
 
-class Cliente
-{
-    public string Nombre { get; set; }
-    public string Direccion { get; set; }
-    public string Telefono { get; set; }
-    public Pedido PedidoAsignado { get; set; }
-}
+// class Cliente
+// {
+//     public string Nombre { get; set; }
+//     public string Direccion { get; set; }
+//     public string Telefono { get; set; }
+//     public Pedido PedidoAsignado { get; set; }
+// }
 
-class Cadete
-{
-    public int Id { get; set; }
-    public string Nombre { get; set; }
-    public string Direccion { get; set; }
-    public string Telefono { get; set; }
-    public List<Pedido> Pedidos { get; set; } = new List<Pedido>();
+// class Cadete
+// {
+//     public int Id { get; set; }
+//     public string Nombre { get; set; }
+//     public string Direccion { get; set; }
+//     public string Telefono { get; set; }
+//     public List<Pedido> Pedidos { get; set; } = new List<Pedido>();
 
-    public double JornalACobrar()
-    {
-        return Pedidos.Count * 500;
-    }
-}
+//     public double JornalACobrar()
+//     {
+//         return Pedidos.Count * 500;
+//     }
+// }
 
-class Cadeteria
-{
-    public string Nombre { get; set; }
-    public string Telefono { get; set; }
-    public List<Cadete> ListadoCadetes { get; set; } = new List<Cadete>();
-    public List<Pedido> Pedidos { get; set; } = new List<Pedido>();
-}
+// class Cadeteria
+// {
+//     public string Nombre { get; set; }
+//     public string Telefono { get; set; }
+//     public List<Cadete> ListadoCadetes { get; set; } = new List<Cadete>();
+//     public List<Pedido> Pedidos { get; set; } = new List<Pedido>();
+// }
 
