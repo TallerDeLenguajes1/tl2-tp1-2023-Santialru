@@ -32,6 +32,19 @@ public class Pedido
         Console.WriteLine(cliente.Nombre);
         Console.WriteLine(cliente.Telefono);
         Console.WriteLine(cliente.Direccion);
-        Console.WriteLine(cliente.);
+        Console.WriteLine(cliente.Refe);
+    }
+
+    public void CrearPedido(Cliente nuevoCliente)
+    {
+        Cliente = nuevoCliente;
+
+        Console.WriteLine("Ingrese número de pedido:");
+        Nro = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Ingrese observaciones:");
+        Obs = Console.ReadLine();
+
+        Estado = "Preparando";
     }
 }

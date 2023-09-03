@@ -1,18 +1,32 @@
+using ElPedido;
 namespace ElCadete;
 public class Cadete
 {
-    private int Id;
-    private string Nombre;
-    private string Direccion;
-    private int Telefono;
-    private List<Pedido> Pedidos;
+    private int id;
+    private string nombre;
+    private string direccion;
+    private int telefono;
+    private List<Pedido> pedidos;
 
-    public int Id1 { get => Id; set => Id = value; }
-    public string Nombre1 { get => Nombre; set => Nombre = value; }
-    public string Direccion1 { get => Direccion; set => Direccion = value; }
-    public int Telefono1 { get => Telefono; set => Telefono = value; }
-    internal List<Pedido> Pedidos1 { get => Pedidos; set => Pedidos = value; }
+    public Cadete(int id, string nombre, string direccion, int telefono, List<Pedido> pedidos)
+    {
+        this.Id = id;
+        this.Nombre = nombre;
+        this.Direccion = direccion;
+        this.Telefono = telefono;
+        this.Pedidos = pedidos;
+    }
 
+    public int Id { get => id; set => id = value; }
+    public string Nombre { get => nombre; set => nombre = value; }
+    public string Direccion { get => direccion; set => direccion = value; }
+    public int Telefono { get => telefono; set => telefono = value; }
+    public List<Pedido> Pedidos { get => pedidos; set => pedidos = value; }
+
+    public void AceptarPedido(Pedido UnPedido)
+    {
+        Pedidos.Add(UnPedido);
+    }
     public double JornalACobrar()
     {
         return Pedidos.Count * 500;

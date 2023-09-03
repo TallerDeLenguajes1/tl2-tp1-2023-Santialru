@@ -14,10 +14,22 @@ public class Cliente
 
     public Cliente (string _nombre, string _direccion, int _telefono, string _refe)
     {
-        this.nombre = _nombre;
-        this.telefono = _telefono;
-        this.direccion = _direccion;
-        this.refe = _refe;
+        nombre = _nombre;
+        telefono = _telefono;
+        direccion = _direccion;
+        refe = _refe;
+    }
+
+    public void DatosCliente()
+    {
+        Console.WriteLine("Ingrese nombre del cliente:");
+        Nombre = Console.ReadLine();
+        Console.WriteLine("Ingrese dirección del cliente:");
+        Direccion = Console.ReadLine();
+        Console.WriteLine("Ingrese teléfono del cliente:");
+        Telefono = Console.ReadLine();
+        Console.WriteLine("Ingrese referencia del cliente:");
+        Refe = Console.ReadLine();
     }
 
     public void getDireccion()
