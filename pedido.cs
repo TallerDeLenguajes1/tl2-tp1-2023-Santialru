@@ -1,50 +1,47 @@
-using ElCliente;
-namespace ElPedido;
+
+namespace tp1;
 public class Pedido
 {
-    private Cliente cliente;
+    private Cliente infoCliente;
     private int nro;
     private string obs;
     private string estado;
 
 
-    internal Cliente Cliente { get => cliente; set => cliente = value; }
+    internal Cliente InfoCliente { get => infoCliente; set => infoCliente = value; }
     public int Nro { get => nro; set => nro = value; }
     public string Obs { get => obs; set => obs = value; }
     public string Estado { get => estado; set => estado = value; }
 
-    public Pedido(Cliente cliente, int nro, string obs, string estado)
+    public Pedido(int nro)
     {
-        this.cliente = cliente;
         this.nro = nro;
-        this.obs = obs;
-        this.estado = estado;
+        this.obs = null;
+        this.infoCliente = CrearClienteAleatorio(); // Crear cliente aleatorio
+        Estado = "EnPreparacion";
     }
     
 
-    public void VerDireccionCliente()
-    {
-        Console.WriteLine("direccion: "+ cliente.Direccion);
-    }
+    private Cliente CrearClienteAleatorio()
+        {
+            Random random = new Random();
+            string nombre = "Cliente" + random.Next(1, 100);
+            string direccion = "Dirección" + random.Next(1, 100);
+            int telefono = random.Next(100000000, 999999999);
+            string datosReferenciaDireccion = "Referencia" + random.Next(1, 100);
 
-    public void VerDatosCliente()
-    {
-        Console.WriteLine(cliente.Nombre);
-        Console.WriteLine(cliente.Telefono);
-        Console.WriteLine(cliente.Direccion);
-        Console.WriteLine(cliente.Refe);
-    }
+            return new Cliente(nombre, direccion, telefono, datosReferenciaDireccion);
+        }
+        public void VerDireccionCliente()
+        {
+            Console.WriteLine("La direccion del cliente "+ infoCliente.Nombre + "es: "+ infoCliente.Direccion);
+        }
 
-    public void CrearPedido(Cliente nuevoCliente)
-    {
-        Cliente = nuevoCliente;
-
-        Console.WriteLine("Ingrese número de pedido:");
-        Nro = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Ingrese observaciones:");
-        Obs = Console.ReadLine();
-
-        Estado = "Preparando";
-    }
+        public void VerDatosCliente()
+        {
+            Console.WriteLine("----Info del Cliente---");
+            Console.WriteLine("Nombre: "+ infoCliente.Nombre);
+            Console.WriteLine("Telefono: "+ infoCliente.Telefono);
+            Console.WriteLine("Direccion: "+ infoCliente.Direccion);
+        }
 }

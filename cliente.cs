@@ -1,4 +1,4 @@
-namespace ElCliente;
+namespace tp1;
 public class Cliente
 {
     private string nombre;
