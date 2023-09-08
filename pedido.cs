@@ -6,12 +6,14 @@ public class Pedido
     private int nro;
     private string obs;
     private string estado;
+    private Cadete elCadete;
 
 
     internal Cliente InfoCliente { get => infoCliente; set => infoCliente = value; }
     public int Nro { get => nro; set => nro = value; }
     public string Obs { get => obs; set => obs = value; }
     public string Estado { get => estado; set => estado = value; }
+    public Cadete ElCadete { get => elCadete; set => elCadete = value; }
 
     public Pedido(int nro)
     {
